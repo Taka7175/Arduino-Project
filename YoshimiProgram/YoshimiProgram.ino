@@ -41,7 +41,7 @@ void setup() {
 void loop() {
   // there's some fluctuation in the readings even if we don't touch it, since
   // the FSR is just a resistor whose strength is affected by pressure 
-  while (pressVal > 0.85 * init_press){
+  while (pressVal > 0.9 * init_press){
    pressVal = analogRead(pressPin);
    Serial.println(pressVal); // debug
 
@@ -51,7 +51,7 @@ void loop() {
   }
  
  // while the vitamins are lifted
-  while (pressVal < .8 * init_press){
+  while (pressVal < .85 * init_press){
    pressVal = analogRead(pressPin);
    Serial.println(pressVal);
    delay(2000);
