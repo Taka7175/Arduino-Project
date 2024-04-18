@@ -30,6 +30,10 @@ void setup() {
   spinAround.write(startAngle);
   delay(5000); // in case we need to fiddle 
   init_press = analogRead(pressPin);
+  delay(500);
+  init_press = max(analogRead(pressPin),init_press);
+  delay(500);
+  init_press = max(analogRead(pressPin),init_press);
   
   // debug - luckily, the user doesn't see this, so we can have it running during the demo
   Serial.begin(9600);
